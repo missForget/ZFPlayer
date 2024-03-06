@@ -1331,6 +1331,9 @@ static NSMutableDictionary <NSString* ,NSNumber *> *_zfPlayRecords;
 
 - (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL {
     self.playingIndexPath = indexPath;
+    if ([self.assetURL.absoluteString isEqualToString:assetURL.absoluteString]) {
+        return;
+    }
     self.assetURL = assetURL;
 }
 
